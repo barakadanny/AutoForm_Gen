@@ -4,12 +4,27 @@ import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/
 
 export default function WhyChooseUsSection() {
   const benefits = [
-    "10x faster form creation than traditional methods",
-    "No coding knowledge required",
-    "Smart field validation and error handling",
-    "Seamless integration with your existing tools",
-    "GDPR-compliant data collection",
-    "Unlimited form submissions on all plans",
+    "Create forms 10x faster than traditional methods",
+    "Get AI-powered insights from your form data",
+    "Chat with your data in real-time",
+    "No coding or technical skills required",
+    "Enterprise-grade security and compliance",
+    "Unlimited forms and responses on all plans",
+  ]
+
+  const testimonials = [
+    {
+      name: "Sarah Chen",
+      role: "Marketing Director",
+      company: "TechStart Inc",
+      quote: "AutoForm Genius transformed our customer feedback process. We went from spending hours building forms to getting instant insights about our users' needs. The AI chat feature is a game-changer!",
+    },
+    {
+      name: "Michael Rodriguez",
+      role: "Product Manager",
+      company: "GrowthLabs",
+      quote: "What impressed me most was how the AI understood complex requirements. We needed a multi-step registration form with conditional logic, and it built it perfectly in seconds. The data analysis features are incredible.",
+    },
   ]
 
   return (
@@ -17,9 +32,9 @@ export default function WhyChooseUsSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Why Choose Us</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Why Teams Choose AutoForm Genius</h2>
             <p className="mt-4 text-lg text-gray-600">
-              Our AI-powered form builder saves you time, reduces errors, and helps you collect data more effectively.
+              Join thousands of teams who've transformed their data collection and analysis with AI-powered forms.
             </p>
 
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -35,49 +50,25 @@ export default function WhyChooseUsSection() {
           </div>
 
           <div className="space-y-6">
-            <Card className="border-gray-200 shadow-md">
-              <CardHeader className="pb-2">
-                <div className="flex items-center space-x-4">
-                  <Avatar>
-                    <AvatarImage src="/placeholder.svg?height=40&width=40" />
-                    <AvatarFallback>JD</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <h4 className="text-lg font-semibold">Jane Doe</h4>
-                    <CardDescription>Marketing Director</CardDescription>
+            {testimonials.map((testimonial, index) => (
+              <Card key={index} className="border-gray-200 shadow-md">
+                <CardHeader className="pb-2">
+                  <div className="flex items-center space-x-4">
+                    <Avatar>
+                      <AvatarImage src={`/placeholder.svg?height=40&width=40&text=${testimonial.name.split(' ').map(n => n[0]).join('')}`} />
+                      <AvatarFallback>{testimonial.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+                    </Avatar>
+                    <div>
+                      <h4 className="text-lg font-semibold">{testimonial.name}</h4>
+                      <CardDescription>{testimonial.role} at {testimonial.company}</CardDescription>
+                    </div>
                   </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  "FormAI has completely transformed how we collect customer feedback. What used to take days now takes
-                  minutes, and the forms look so much better than what we were creating before. The AI suggestions are
-                  spot-on!"
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-gray-200 shadow-md">
-              <CardHeader className="pb-2">
-                <div className="flex items-center space-x-4">
-                  <Avatar>
-                    <AvatarImage src="/placeholder.svg?height=40&width=40" />
-                    <AvatarFallback>MS</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <h4 className="text-lg font-semibold">Michael Smith</h4>
-                    <CardDescription>Product Manager</CardDescription>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  "I was skeptical about an AI form builder, but it's genuinely impressive. It understood exactly what I
-                  needed and created a complex registration form in seconds. The time savings alone make it worth every
-                  penny."
-                </p>
-              </CardContent>
-            </Card>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600">"{testimonial.quote}"</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </div>
