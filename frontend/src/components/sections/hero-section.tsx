@@ -66,7 +66,7 @@ export default function HeroSection() {
                     </div>
                   </div>
                 </div>
-                <div className="absolute top-1/2 -right-6 transform -translate-y-1/2">
+                <div className="absolute top-1/2 -right-1 transform -translate-y-1/2">
                   <div className="bg-purple-600 text-white text-xs py-1 px-2 rounded-md shadow-md">
                     <span className="block">AI generating...</span>
                   </div>
