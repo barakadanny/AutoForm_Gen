@@ -5,18 +5,15 @@ import FeaturesSection from "@/components/sections/features-section"
 import CtaSection from "@/components/sections/cta-section"
 import WhyChooseUsSection from "@/components/sections/why-choose-us-section"
 // import Footer from "@/components/shared/footer"
+
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col">
-      {/* <Navbar /> */}
-      <main className="flex-grow">
-        <HeroSection />
-        <HowItWorksSection />
-        <FeaturesSection />
-        <WhyChooseUsSection />
-        <CtaSection />
-      </main>
-      {/* <Footer /> */}
-    </div>
+    <>
+      <HeroSection />
+      <HowItWorksSection />
+      <FeaturesSection />
+      <WhyChooseUsSection />
+      <CtaSection />
+    </>
   )
 }
