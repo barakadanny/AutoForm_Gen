@@ -1,149 +1,98 @@
-# Frontend Documentation
+# AutoForm Genius Frontend
 
-## Overview
-The frontend of this project is built with React, TypeScript, and Vite, providing a modern, type-safe, and performant user interface. It follows a component-based architecture with a focus on maintainability and scalability.
+AutoForm Genius is a modern web application that leverages AI to help users create and analyze forms. This repository contains the frontend implementation built with React, TypeScript, and Tailwind CSS.
 
-## Architecture
+## 🚀 Features
 
-### Folder Structure
+- **AI-Powered Form Generation**: Describe your form in plain English and let AI build it
+- **Smart Form Analysis**: Get insights and answers from your form data
+- **Modern UI/UX**: Clean, responsive design with smooth animations
+- **Type-Safe Development**: Built with TypeScript for better code quality
+- **Performance Optimized**: Fast loading and smooth interactions
+
+## 🛠 Tech Stack
+
+- **Framework**: React 19 + TypeScript
+- **Styling**: Tailwind CSS + Framer Motion
+- **Routing**: React Router v7
+- **State Management**: React Context
+- **Testing**: Vitest + React Testing Library
+- **Code Quality**: ESLint + Prettier + Husky
+
+## 📁 Project Structure
+
 ```
-src/
-├── components/     # Reusable UI components
-├── pages/         # Page-level components
-├── hooks/         # Custom React hooks
-├── utils/         # Utility functions
-├── assets/        # Static assets (images, fonts)
-├── styles/        # CSS modules and global styles
-├── types/         # TypeScript type definitions
-├── services/      # API service functions
-├── context/       # React context providers
-└── test/          # Test files and setup
+frontend/
+├── src/
+│   ├── components/     # Reusable UI components
+│   ├── pages/         # Page components
+│   ├── layout/        # Layout components
+│   ├── lib/           # Utility functions
+│   ├── hooks/         # Custom React hooks
+│   ├── context/       # React Context providers
+│   ├── services/      # API and service integrations
+│   ├── styles/        # Global styles and Tailwind config
+│   ├── types/         # TypeScript type definitions
+│   ├── utils/         # Helper functions
+│   ├── test/          # Test files
+│   └── assets/        # Static assets
 ```
 
-### Architecture Decisions
-- **Component-Based Architecture**: Promotes reusability and maintainability
-- **TypeScript**: Ensures type safety and better developer experience
-- **Vite**: Provides fast development and build times
-- **Tailwind CSS**: Utility-first CSS framework for rapid UI development
-- **Testing Setup**: Vitest and React Testing Library for comprehensive testing
+For detailed documentation about the project structure and architecture, see [docs/architecture.md](docs/architecture.md).
 
-## Core Components
-
-### Layout Components
-- `App.tsx`: Root component and routing setup
-- `Layout.tsx`: Main layout wrapper
-- `Header.tsx`: Navigation header
-- `Footer.tsx`: Page footer
-
-### Form Components
-- `FormBuilder.tsx`: Dynamic form generator
-- `FormPreview.tsx`: Form preview component
-- `FieldRenderer.tsx`: Field type renderer
-
-## Design System
-
-### Styling Conventions
-- **Tailwind CSS**: Primary styling solution
-- **CSS Modules**: For component-specific styles
-- **Responsive Design**: Mobile-first approach
-- **Dark Mode**: System preference-based
-
-### Typography
-- Primary Font: Inter
-- Heading Sizes: h1-h6 with consistent scaling
-- Body Text: 16px base size
-
-### Colors
-- Primary: #646cff
-- Secondary: #535bf2
-- Background: Light/Dark mode variants
-- Text: High contrast for accessibility
-
-## Setup Instructions
+## 🚀 Getting Started
 
 ### Prerequisites
+
 - Node.js (v18 or higher)
 - npm (v9 or higher)
 
 ### Installation
-```bash
-# Install dependencies
-npm install
 
-# Start development server
-npm run dev
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   cd frontend
+   npm install
+   ```
 
-# Build for production
-npm run build
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-# Run tests
-npm test
-```
+4. Open [http://localhost:5173](http://localhost:5173) in your browser
 
-### Environment Variables
-Create a `.env` file in the root directory:
-```env
-VITE_API_URL=http://localhost:3000
-VITE_APP_NAME=AutoForm
-```
+### Available Scripts
 
-## Key Dependencies
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run lint` - Run ESLint
+- `npm run test` - Run tests
+- `npm run format` - Format code with Prettier
 
-### Core
-- `react`: UI library
-- `react-dom`: DOM rendering
-- `typescript`: Type safety
-- `vite`: Build tool and dev server
+## 📚 Documentation
 
-### Styling
-- `tailwindcss`: Utility-first CSS
-- `postcss`: CSS processing
-- `autoprefixer`: CSS vendor prefixes
+- [Architecture Overview](docs/architecture.md)
+- [Component Library](docs/components.md)
+- [Testing Guide](docs/testing.md)
+- [Styling Guide](docs/styling.md)
 
-### Development
-- `eslint`: Code linting
-- `prettier`: Code formatting
-- `husky`: Git hooks
-- `vitest`: Testing framework
+## 🔧 Development Tools
 
-## Testing
+- **ESLint**: Code linting and quality checks
+- **Prettier**: Code formatting
+- **Husky**: Git hooks for pre-commit checks
+- **Vitest**: Fast and modern testing framework
 
-### Test Structure
-- Unit tests for components
-- Integration tests for features
-- API mocking with MSW
-- Coverage reporting
+## 🤝 Contributing
 
-### Running Tests
-```bash
-# Run all tests
-npm test
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-# Run with coverage
-npm run test:coverage
+## 📝 License
 
-# Run in watch mode
-npm test -- --watch
-```
-
-## Future Improvements
-
-### Planned Features
-- [ ] Form template library
-- [ ] Real-time collaboration
-- [ ] Advanced form validation
-- [ ] Form analytics dashboard
-
-### Technical Debt
-- [ ] Improve test coverage
-- [ ] Optimize bundle size
-- [ ] Add performance monitoring
-- [ ] Implement error tracking
-
-## Changelog
-
-### [Unreleased]
-- Initial project setup
-- Basic form builder implementation
-- Testing infrastructure
-- Documentation setup
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
