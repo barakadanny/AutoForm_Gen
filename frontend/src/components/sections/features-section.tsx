@@ -4,30 +4,28 @@ export default function FeaturesSection() {
   const features = [
     {
       icon: <Sparkles className="h-6 w-6 text-purple-600" />,
-      title: "AI-generated fields",
-      description:
-        "Our AI automatically creates the right fields based on your form's purpose, with smart validation and logic.",
+      title: "AI Form Generation",
+      description: "Describe your form in plain English and watch as our AI instantly builds it with the right fields and logic.",
     },
     {
       icon: <MousePointerClick className="h-6 w-6 text-purple-600" />,
-      title: "Drag-and-drop editor",
-      description:
-        "Easily customize your form with our intuitive drag-and-drop interface. No technical skills required.",
+      title: "Data Analysis & Insights",
+      description: "Get AI-powered insights from your form submissions. Ask questions about your data and get instant answers.",
     },
     {
       icon: <Code className="h-6 w-6 text-purple-600" />,
-      title: "Export to code or embed",
-      description: "Get clean HTML/CSS code or embed your form directly on your website with a simple snippet.",
+      title: "Smart Integrations",
+      description: "Connect with your favorite tools. Export data, trigger workflows, or embed forms anywhere.",
     },
     {
       icon: <Save className="h-6 w-6 text-purple-600" />,
-      title: "Save templates and reuse",
-      description: "Create a library of your favorite forms and reuse them across projects with just a few clicks.",
+      title: "Templates & Reuse",
+      description: "Save your favorite forms as templates. Reuse and customize them across projects in seconds.",
     },
     {
       icon: <Zap className="h-6 w-6 text-purple-600" />,
-      title: "Fast and responsive",
-      description: "All forms are lightning-fast and look great on any device, from desktop to mobile.",
+      title: "Real-time Analytics",
+      description: "Track form performance, analyze responses, and get actionable insights in real-time.",
     },
   ]
 
@@ -35,9 +33,9 @@ export default function FeaturesSection() {
     <section id="features" className="py-16 md:py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Key Features</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Powerful Features for Smart Forms</h2>
           <p className="mt-4 text-lg text-gray-600">
-            Everything you need to create beautiful, functional forms without the hassle.
+            Everything you need to build forms and get insights, powered by AI.
           </p>
         </div>
 
