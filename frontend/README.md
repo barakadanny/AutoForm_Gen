@@ -1,54 +1,98 @@
-# React + TypeScript + Vite
+# AutoForm Genius Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+AutoForm Genius is a modern web application that leverages AI to help users create and analyze forms. This repository contains the frontend implementation built with React, TypeScript, and Tailwind CSS.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **AI-Powered Form Generation**: Describe your form in plain English and let AI build it
+- **Smart Form Analysis**: Get insights and answers from your form data
+- **Modern UI/UX**: Clean, responsive design with smooth animations
+- **Type-Safe Development**: Built with TypeScript for better code quality
+- **Performance Optimized**: Fast loading and smooth interactions
 
-## Expanding the ESLint configuration
+## 🛠 Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Framework**: React 19 + TypeScript
+- **Styling**: Tailwind CSS + Framer Motion
+- **Routing**: React Router v7
+- **State Management**: React Context
+- **Testing**: Vitest + React Testing Library
+- **Code Quality**: ESLint + Prettier + Husky
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 📁 Project Structure
+
+```
+frontend/
+├── src/
+│   ├── components/     # Reusable UI components
+│   ├── pages/         # Page components
+│   ├── layout/        # Layout components
+│   ├── lib/           # Utility functions
+│   ├── hooks/         # Custom React hooks
+│   ├── context/       # React Context providers
+│   ├── services/      # API and service integrations
+│   ├── styles/        # Global styles and Tailwind config
+│   ├── types/         # TypeScript type definitions
+│   ├── utils/         # Helper functions
+│   ├── test/          # Test files
+│   └── assets/        # Static assets
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+For detailed documentation about the project structure and architecture, see [docs/architecture.md](docs/architecture.md).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚀 Getting Started
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+### Prerequisites
+
+- Node.js (v18 or higher)
+- npm (v9 or higher)
+
+### Installation
+
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   cd frontend
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:5173](http://localhost:5173) in your browser
+
+### Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run lint` - Run ESLint
+- `npm run test` - Run tests
+- `npm run format` - Format code with Prettier
+
+## 📚 Documentation
+
+- [Architecture Overview](docs/architecture.md)
+- [Component Library](docs/components.md)
+- [Testing Guide](docs/testing.md)
+- [Styling Guide](docs/styling.md)
+
+## 🔧 Development Tools
+
+- **ESLint**: Code linting and quality checks
+- **Prettier**: Code formatting
+- **Husky**: Git hooks for pre-commit checks
+- **Vitest**: Fast and modern testing framework
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
