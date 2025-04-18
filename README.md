@@ -49,7 +49,7 @@ A robust Express.js server that handles:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/autoform.git
+   git clone https://github.com/barakadanny/AutoForm_Gen.git
    cd autoform
    ```
 
