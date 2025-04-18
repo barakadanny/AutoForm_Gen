@@ -1,94 +1,142 @@
-# Full Stack Project
+# AutoForm Genius 🚀
 
-This is a full-stack project with a React frontend and Express.js backend.
+> **Note**: This project is currently under active development. Features and documentation are being added regularly.
+
+## Overview
+
+AutoForm Genius is an innovative web application that revolutionizes form creation and data analysis through the power of artificial intelligence. It enables users to describe their form requirements in plain English and instantly generates fully functional forms. Beyond form creation, it provides intelligent data analysis, offering actionable insights and answering questions about the collected data.
+
+### Key Features
+- **AI-Powered Form Generation**: Create forms by simply describing what you need
+- **Smart Data Analysis**: Get instant insights from your form responses
+- **Natural Language Interface**: Interact with your data using everyday language
+- **Real-time Form Preview**: See your form take shape as you describe it
+- **Data Visualization**: Understand your form responses through intuitive charts and reports
 
 ## Project Structure
 
-```
-.
-├── frontend/           # React frontend application
-│   ├── src/
-│   │   ├── components/ # Reusable UI components
-│   │   ├── pages/      # Page components
-│   │   ├── hooks/      # Custom React hooks
-│   │   ├── utils/      # Utility functions
-│   │   ├── assets/     # Static assets
-│   │   ├── styles/     # CSS modules and styles
-│   │   ├── types/      # TypeScript type definitions
-│   │   ├── services/   # API services
-│   │   └── context/    # React context providers
-│   └── ...
-└── backend/            # Express.js backend server
-    ├── src/
-    │   ├── routes/     # API routes
-    │   ├── controllers/# Route controllers
-    │   ├── services/   # Business logic
-    │   ├── models/     # Data models
-    │   ├── middleware/ # Custom middleware
-    │   ├── config/     # Configuration files
-    │   ├── utils/      # Utility functions
-    │   └── types/      # TypeScript type definitions
-    └── ...
-```
+The project is divided into two main components:
+
+### Frontend (`/frontend`)
+A modern React application built with:
+- React 19 + TypeScript
+- Vite for fast development
+- Tailwind CSS for styling
+- Framer Motion for animations
+- React Router for navigation
+
+### Backend (`/backend`)
+A robust Express.js server that handles:
+- Form generation logic
+- AI integration
+- Data processing
+- API endpoints
+- Database operations
+
+## Documentation
+
+📁 [Frontend Documentation](./frontend/README.md)  
+📁 [Backend Documentation](./backend/README.md)
 
 ## Getting Started
 
-### Frontend Setup
+### Prerequisites
+- Node.js (v18 or higher)
+- npm (v9 or higher)
+- Git
 
-1. Navigate to the frontend directory:
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/autoform.git
+   cd autoform
+   ```
+
+2. Install frontend dependencies:
    ```bash
    cd frontend
-   ```
-
-2. Install dependencies:
-   ```bash
    npm install
    ```
 
-3. Start the development server:
+3. Install backend dependencies:
    ```bash
-   npm run dev
+   cd ../backend
+   npm install
    ```
 
-### Backend Setup
+4. Set up environment variables:
+   - Copy `.env.example` to `.env` in both frontend and backend directories
+   - Add your API keys and configuration
 
-1. Navigate to the backend directory:
+5. Start the development servers:
    ```bash
+   # Terminal 1 - Backend
    cd backend
-   ```
+   npm run dev
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Start the development server:
-   ```bash
+   # Terminal 2 - Frontend
+   cd frontend
    npm run dev
    ```
 
-## Development Tools
+6. Open [http://localhost:5173](http://localhost:5173) in your browser
+
+## Tech Stack
 
 ### Frontend
-- React with TypeScript
-- Vite for fast development
-- Tailwind CSS for styling
-- ESLint and Prettier for code quality
-- Husky for git hooks
+- **Framework**: React 19 + TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS + Framer Motion
+- **State Management**: React Context
+- **Testing**: Vitest + React Testing Library
+- **Code Quality**: ESLint + Prettier + Husky
 
 ### Backend
-- Express.js with TypeScript
-- Nodemon for development
-- CORS for cross-origin requests
-- Morgan for logging
-- Dotenv for environment variables
+- **Framework**: Express.js
+- **Language**: TypeScript
+- **Database**: [To be determined]
+- **AI Integration**: [To be determined]
+- **Testing**: Jest
+- **API Documentation**: Swagger/OpenAPI
 
-## Best Practices
+### AI Capabilities
+- Natural Language Processing for form generation
+- Data analysis and insight generation
+- Question answering about form responses
+- [Specific AI provider to be determined]
 
-- Follow the established folder structure
-- Use TypeScript for type safety
-- Write meaningful commit messages
-- Keep components and functions small and focused
-- Use proper error handling
-- Follow RESTful API design principles
-- Document your code 
+## Contributing
+
+We welcome contributions to AutoForm Genius! Here's how you can help:
+
+1. **Report Bugs**: Open an issue with detailed reproduction steps
+2. **Suggest Features**: Share your ideas for new features or improvements
+3. **Submit Code**: Fork the repository and create a pull request
+4. **Improve Documentation**: Help make our docs clearer and more comprehensive
+
+### Areas for Contribution
+- Frontend UI/UX improvements
+- Backend API enhancements
+- AI integration and optimization
+- Testing coverage
+- Documentation
+- Performance optimization
+
+## Future Plans
+
+- [ ] Implement user authentication
+- [ ] Add form templates library
+- [ ] Enhance AI capabilities
+- [ ] Add collaborative features
+- [ ] Implement form analytics dashboard
+- [ ] Add export/import functionality
+- [ ] Support multiple languages
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For questions or collaboration opportunities, please reach out to [your contact information]. 
