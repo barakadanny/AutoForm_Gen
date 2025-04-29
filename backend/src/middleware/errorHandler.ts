@@ -1,13 +1,10 @@
 import { Request, Response, NextFunction } from 'express';
 
 export class AppError extends Error {
-  constructor(
-    public statusCode: number,
-    public message: string,
-    public isOperational = true
-  ) {
+  constructor(public message: string, public statusCode: number) {
     super(message);
-    Object.setPrototypeOf(this, AppError.prototype);
+    this.name = 'AppError';
+    Error.captureStackTrace(this, this.constructor);
   }
 }
 
