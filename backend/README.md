@@ -1,202 +1,129 @@
-# Backend Documentation
+# AutoForm Genius Backend
 
-## Overview
-The backend is built with Express.js and TypeScript, providing a robust API for the frontend application. It follows a clean architecture pattern with clear separation of concerns and modular design.
+This is the backend service for AutoForm Genius, a powerful AI-driven form generation and analysis platform.
 
-## Architecture
+## 🚀 Features
 
-### Folder Structure
+- **AI-Powered Form Generation**: Convert natural language descriptions into functional forms
+- **Smart Data Analysis**: Get insights and answers from form responses
+- **RESTful API**: Clean, well-documented endpoints
+- **Type Safety**: Built with TypeScript
+- **Scalable Architecture**: Follows clean architecture principles
+
+## 📁 Project Structure
+
 ```
 src/
-├── routes/         # API route definitions
-├── controllers/    # Route handlers
-├── services/       # Business logic
-├── models/         # Data models
-├── middleware/     # Custom middleware
-├── config/         # Configuration files
-├── utils/          # Utility functions
-├── types/          # TypeScript type definitions
-└── test/           # Test files
+├── config/           # Configuration and environment variables
+├── controllers/      # Route controllers
+├── middleware/       # Custom middleware (error handling, auth, etc.)
+├── models/          # Data models and interfaces
+├── routes/          # API route definitions
+├── services/        # Business logic and AI integration
+│   └── ai/          # AI service implementation
+├── types/           # TypeScript type definitions
+├── utils/           # Utility functions
+├── validators/      # Request validation
+└── server.ts        # Main application entry point
 ```
 
-### Architecture Decisions
-- **Clean Architecture**: Separation of concerns
-- **TypeScript**: Type safety and better maintainability
-- **Express.js**: Lightweight and flexible web framework
-- **Modular Design**: Easy to extend and maintain
-- **Testing First**: Comprehensive test coverage
+## 🛠 Tech Stack
 
-## API Design
+- **Framework**: Express.js
+- **Language**: TypeScript
+- **AI Integration**: OpenAI (to be implemented)
+- **Testing**: Jest
+- **Code Quality**: ESLint + Prettier
 
-### Endpoints Overview
-```
-/api
-├── /forms          # Form management
-│   ├── POST /      # Create form
-│   ├── GET /       # List forms
-│   └── /:id        # Form operations
-├── /auth           # Authentication
-│   ├── /login      # User login
-│   └── /register   # User registration
-└── /ai             # AI services
-    └── /generate   # Form generation
-```
-
-### Response Format
-```typescript
-interface ApiResponse<T> {
-  success: boolean;
-  data?: T;
-  error?: {
-    code: string;
-    message: string;
-  };
-}
-```
-
-## Services
-
-### Authentication
-- JWT-based authentication
-- Role-based access control
-- Session management
-
-### Form Management
-- CRUD operations for forms
-- Form validation
-- Form versioning
-
-### AI Integration
-- Form generation
-- Field suggestions
-- Content analysis
-
-## Development
+## 🚀 Getting Started
 
 ### Prerequisites
+
 - Node.js (v18 or higher)
 - npm (v9 or higher)
-- MongoDB (for database)
 
 ### Installation
-```bash
-# Install dependencies
-npm install
 
-# Start development server
-npm run dev
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-# Build for production
-npm run build
+2. Create a `.env` file in the root directory:
+   ```env
+   NODE_ENV=development
+   PORT=3000
+   API_PREFIX=/api/v1
+   CORS_ORIGIN=http://localhost:5173
+   OPENAI_API_KEY=your_api_key_here
+   OPENAI_MODEL=gpt-4
+   ```
 
-# Run tests
-npm test
-```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-### Environment Variables
-Create a `.env` file in the root directory:
-```env
-PORT=3000
-MONGODB_URI=mongodb://localhost:27017/autoform
-JWT_SECRET=your-secret-key
-NODE_ENV=development
-```
+### Available Scripts
 
-## Production Deployment
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm run test` - Run tests
+- `npm run test:watch` - Run tests in watch mode
+- `npm run test:coverage` - Run tests with coverage
 
-### Process Manager
-```bash
-# Install PM2 globally
-npm install -g pm2
+## 📚 API Documentation
 
-# Start application
-pm2 start dist/server.js
+### Form Generation
+- **Endpoint**: `POST /api/v1/forms/generate`
+- **Request Body**:
+  ```json
+  {
+    "description": "Create a contact form with name, email, and message fields",
+    "options": {
+      "includeValidation": true,
+      "includeStyling": true
+    }
+  }
+  ```
 
-# Monitor application
-pm2 monit
-```
+### Form Analysis
+- **Endpoint**: `POST /api/v1/forms/analyze`
+- **Request Body**:
+  ```json
+  {
+    "formData": {
+      "name": "John Doe",
+      "email": "john@example.com",
+      "message": "Hello, world!"
+    },
+    "question": "What is the most common topic in the messages?"
+  }
+  ```
 
-### Environment Setup
-```bash
-# Set production environment
-export NODE_ENV=production
+## 🔧 Development
 
-# Start with PM2
-pm2 start ecosystem.config.js
-```
+### Code Style
+- Follow TypeScript best practices
+- Use ESLint and Prettier for code formatting
+- Write tests for new features
+- Document complex logic
 
-## Key Dependencies
-
-### Core
-- `express`: Web framework
-- `typescript`: Type safety
-- `mongoose`: MongoDB ODM
-
-### Middleware
-- `cors`: Cross-origin resource sharing
-- `morgan`: HTTP request logging
-- `helmet`: Security headers
-- `compression`: Response compression
-
-### Development
-- `nodemon`: Development server
-- `jest`: Testing framework
-- `supertest`: API testing
-- `eslint`: Code linting
-
-## Testing
-
-### Test Structure
-- Unit tests for services
+### Testing
+- Unit tests for services and utilities
 - Integration tests for API endpoints
-- E2E tests for critical flows
+- Mock external services (like OpenAI)
 
-### Running Tests
-```bash
-# Run all tests
-npm test
+## 🤝 Contributing
 
-# Run with coverage
-npm run test:coverage
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-# Run in watch mode
-npm run test:watch
-```
+## 📝 License
 
-## Security
-
-### Implemented Measures
-- JWT authentication
-- Rate limiting
-- Input validation
-- CORS configuration
-- Security headers
-
-### Best Practices
-- Environment variables for secrets
-- Regular dependency updates
-- Input sanitization
-- Error handling
-
-## Future Improvements
-
-### Planned Features
-- [ ] Form analytics
-- [ ] Real-time collaboration
-- [ ] Advanced AI features
-- [ ] API documentation
-
-### Technical Debt
-- [ ] Improve error handling
-- [ ] Add request validation
-- [ ] Implement caching
-- [ ] Add monitoring
-
-## Changelog
-
-### [Unreleased]
-- Initial project setup
-- Basic API structure
-- Authentication system
-- Testing infrastructure
-- Documentation setup 
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. 
