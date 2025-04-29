@@ -11,7 +11,7 @@ const configSchema = z.object({
   API_PREFIX: z.string().default('/api/v1'),
   CORS_ORIGIN: z.string().default('http://localhost:5173'),
   // AI Configuration
-  OPENAI_API_KEY: z.string().optional(),
+  OPENAI_API_KEY: z.string().min(1, 'OpenAI API key is required'),
   OPENAI_MODEL: z.string().default('gpt-4'),
 });
 
