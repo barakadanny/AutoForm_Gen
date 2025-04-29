@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import { AIService } from '../services/ai/AIService';
 import { AppError } from '../middleware/errorHandler';
+import { validateFormGeneration, validateFormAnalysis } from '../middleware/validateRequest';
 
 export class FormController {
   private aiService: AIService;
@@ -15,23 +16,31 @@ export class FormController {
     next: NextFunction
   ) => {
     try {
+      // Validate request
+      validateFormGeneration(req, res, (err) => {
+        if (err) return next(err);
+      });
+
       const { description, options } = req.body;
 
       if (!description) {
-        throw new AppError(400, 'Form description is required');
+        return next(new AppError('Form description is required', 400));
       }
 
-      const response = await this.aiService.generateForm({
+      // Generate form using AI service
+      const result = await this.aiService.generateForm({
         description,
         options,
       });
 
-      res.status(200).json({
-        status: 'success',
-        data: response,
-      });
+      res.json(result);
     } catch (error) {
-      next(error);
+      if (error instanceof AppError) {
+        next(error);
+      } else {
+        console.error('Unexpected error in generateForm:', error);
+        next(new AppError('Failed to generate form schema', 500));
+      }
     }
   };
 
@@ -41,24 +50,18 @@ export class FormController {
     next: NextFunction
   ) => {
     try {
+      // Validate request
+      validateFormAnalysis(req, res, () => {});
+
       const { formData, question } = req.body;
 
-      if (!formData || !question) {
-        throw new AppError(
-          400,
-          'Form data and question are required for analysis'
-        );
-      }
-
-      const response = await this.aiService.analyzeFormData({
+      // Analyze form data using AI service
+      const result = await this.aiService.analyzeFormData({
         formData,
         question,
       });
 
-      res.status(200).json({
-        status: 'success',
-        data: response,
-      });
+      res.json(result);
     } catch (error) {
       next(error);
     }
